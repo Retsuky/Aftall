@@ -3,9 +3,10 @@
   "displayName": "; after every line",
   "description": "Now ; will be after every line",
   "version": "1.0.0",
+  "license": "MIT",
   "repository": {
   "type": "git",
-  "url": "https://github.com/yourusername/your-repository.git"
+  "url": "https://github.com/Retsuky/Aftall.git"
   },
   "engines": {
     "vscode": "^1.96.0"
