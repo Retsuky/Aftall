@@ -14,6 +14,6 @@ It speeds up writing code a bit, and also makes it easier for novice programmers
 
 Release of the first version of the extension
 
-### 1.0.1;
+### 1.0.1
 
 Fixed the setting ";" after functions and methods written via "@" such as @Override in Java
