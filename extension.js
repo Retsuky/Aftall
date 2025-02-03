@@ -31,9 +31,10 @@ function activate(context) {
 			})
 		}
 		
-		
+		/*
 		// Показываем текст строки (Для проверки текста в активной строке)
 		vscode.window.showInformationMessage(`Выбрана строка: ${lineSplitted} `);
+		*/
 		
 		
 		await vscode.commands.executeCommand('type', { text: '\n' }); // Сохранение стандартной функции Enter
