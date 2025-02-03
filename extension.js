@@ -19,20 +19,22 @@ function activate(context) {
 		
 		const lineSplitted = activeLineText.split(""); // Разделенная активная строка
 		const lastWord = lineSplitted[lineSplitted.length - 1]; // Последний символ в активной строке
-		const preLastWord = lineSplitted[lineSplitted.length - 2]; // Предпоследний символ в активной строке
+		const preLastWord = lineSplitted[lineSplitted.length - 2]; // Предпоследний символ в активной строке;
+		const firstWord = activeLineText.trim().split("")[0];
 		
+
 		const symbols = ["{", "}", "[", "]", ":", ";", ",", " ", undefined, "*", "/", "<", ">"]; // Массив с символами, после которых не требуется ;
 
-		if(!symbols.includes(lastWord) && preLastWord !== ","){ // Если последний символ строки не находится в массиве, не требующем ; и предпоследний символ не ,
+		if(!symbols.includes(lastWord) && preLastWord !== "," && firstWord !== "@"){ // Если последний символ строки не находится в массиве, не требующем ; и предпоследний символ не ,
 			editor.edit((editBuilder) => { // Изменение строки
 				editBuilder.insert(position,";"); // Вставка ; после последнего сиимвола
 			})
 		}
-
-		/*
+		
+		
 		// Показываем текст строки (Для проверки текста в активной строке)
-		vscode.window.showInformationMessage(`Выбрана строка: ${activeLineText} `);
-		*/
+		vscode.window.showInformationMessage(`Выбрана строка: ${lineSplitted} `);
+		
 		
 		await vscode.commands.executeCommand('type', { text: '\n' }); // Сохранение стандартной функции Enter
 	}); 
