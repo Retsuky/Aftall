@@ -14,6 +14,21 @@ function activate(context) {
 		  return;
 		}
 
+		const filename = editor.document.fileName; // Получение полного пути к файлу
+		const lastIndName = filename.lastIndexOf('.'); 
+		const cutName = filename.split("").splice(lastIndName+1,filename.length);
+		const format = cutName.join("") // Получение формата файла;
+		const declineFormat = ["py", "js", "rb", "swift", "kt", "kts", "go", "ts", "lua", "html", "md"] // Языки, не требующие ;
+		/*
+		if (filename) {
+            vscode.window.showInformationMessage(
+                `shortname = ${format}`
+            );
+        }
+			*/
+			
+		if (!declineFormat.includes(format)){ // Если язык требует ;
+
 		const position = editor.selection.active; // Активная строка
 		const activeLineText = editor.document.lineAt(position.line).text; // Текст строки по выделению
 		
@@ -35,7 +50,7 @@ function activate(context) {
 		// Показываем текст строки (Для проверки текста в активной строке)
 		vscode.window.showInformationMessage(`Выбрана строка: ${lineSplitted} `);
 		*/
-		
+		}
 		
 		await vscode.commands.executeCommand('type', { text: '\n' }); // Сохранение стандартной функции Enter
 	}); 

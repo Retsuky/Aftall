@@ -16,4 +16,8 @@ Release of the first version of the extension
 
 ### 1.0.1
 
-Fixed the setting ";" after functions and methods written via "@" such as @Override in Java
+Fixed the setting ";" after functions and methods written via "@" such as @Override in Java;
+
+### 1.0.2
+
+Now don't works with languages, that dont need ";" after line
